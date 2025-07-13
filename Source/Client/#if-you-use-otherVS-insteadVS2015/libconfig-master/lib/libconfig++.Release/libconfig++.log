@@ -1,0 +1,15 @@
+﻿  grammar.c
+  libconfig.c
+  scanctx.c
+  scanner.c
+  strbuf.c
+  strvec.c
+  util.c
+  wincompat.c
+  libconfigcpp.cc
+     Creazione della libreria C:\Users\ciron\Desktop\TuT OffShop\Source\Client\#if-you-use-otherVS-insteadVS2015\libconfig-master\Release\libconfig++.lib e dell'oggetto C:\Users\ciron\Desktop\TuT OffShop\Source\Client\#if-you-use-otherVS-insteadVS2015\libconfig-master\Release\libconfig++.exp
+  Generazione codice in corso...
+  Previous IPDB not found, fall back to full compilation.
+  All 471 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generazione codice terminata
+  libconfig++.vcxproj -> C:\Users\ciron\Desktop\TuT OffShop\Source\Client\#if-you-use-otherVS-insteadVS2015\libconfig-master\Release\libconfig++.dll

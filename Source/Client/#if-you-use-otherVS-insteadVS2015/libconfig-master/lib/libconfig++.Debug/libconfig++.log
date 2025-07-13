@@ -1,0 +1,14 @@
+﻿  grammar.c
+  libconfig.c
+  scanctx.c
+  scanner.c
+  strbuf.c
+  strvec.c
+  util.c
+  wincompat.c
+  Generazione del codice in corso...
+  libconfigcpp.cc
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1316,5): warning MSB8012: TargetPath(C:\Users\ciron\Desktop\TuT OffShop\Source\Client\#if-you-use-otherVS-insteadVS2015\libconfig-master\Debug\libconfig++.dll) non corrisponde al valore della proprietà OutputFile di Linker (C:\Users\ciron\Desktop\TuT OffShop\Source\Client\#if-you-use-otherVS-insteadVS2015\libconfig-master\Debug\libconfig++_d.dll). Questa condizione potrebbe impedire la corretta compilazione del progetto. Per risolvere il problema, accertarsi che i valori di proprietà $(OutDir), $(TargetName) e $(TargetExt) corrispondano al valore specificato in %(Link.OutputFile).
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1318,5): warning MSB8012: TargetName(libconfig++) non corrisponde al valore della proprietà OutputFile di Linker (libconfig++_d). Questa condizione potrebbe impedire la corretta compilazione del progetto. Per risolvere il problema, accertarsi che i valori di proprietà $(OutDir), $(TargetName) e $(TargetExt) corrispondano al valore specificato in %(Link.OutputFile).
+     Creazione della libreria C:\Users\ciron\Desktop\TuT OffShop\Source\Client\#if-you-use-otherVS-insteadVS2015\libconfig-master\Debug\libconfig++.lib e dell'oggetto C:\Users\ciron\Desktop\TuT OffShop\Source\Client\#if-you-use-otherVS-insteadVS2015\libconfig-master\Debug\libconfig++.exp
+  libconfig++.vcxproj -> C:\Users\ciron\Desktop\TuT OffShop\Source\Client\#if-you-use-otherVS-insteadVS2015\libconfig-master\Debug\libconfig++.dll

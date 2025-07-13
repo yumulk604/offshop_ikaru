@@ -1,0 +1,2 @@
+Do not forget to add PythonNetworkStreamOfflineshop.cpp , PythonOfflineshop.cpp/h at your UserInterface Project.
+Do not forget to add libconfig++ in your extern / UserInterface project.

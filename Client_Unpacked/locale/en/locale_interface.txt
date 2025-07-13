@@ -1,0 +1,9 @@
+FLR_WINDOW_NAME	Warehouse Offline Shop
+FLR_PREV_PAGE	Back
+FLR_NEXT_PAGE	Next
+FLR_FROM	From
+FLR_REASON	Reason
+FLR_GET_ALL	Get all
+FLR_GET_QUEST	Are you sure you want to remove "%s"?
+FLR_GET_QUEST_ALL	Are you sure you want to remove all items?
+FLR_MONEY_DESC	Yang gathered from your offline store.

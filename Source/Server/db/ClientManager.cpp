@@ -1,0 +1,110 @@
+1* Search for:
+	peer->EncodeWORD(0xffff);
+
+2* Add below:
+#ifdef __ENABLE_NEW_OFFLINESHOP__
+	SendOfflineshopTable(peer);
+#endif
+
+3* Search for:
+			case HEADER_GD_REQUEST_CHANNELSTATUS:
+				RequestChannelStatus(peer, dwHandle);
+				break;
+
+4* Add below:
+#ifdef __ENABLE_NEW_OFFLINESHOP__
+			case HEADER_GD_NEW_OFFLINESHOP:
+				RecvOfflineShopPacket(peer, data);
+				break;
+#endif
+
+5* Search for:
+	if (!peer)
+	{
+		delete qi;
+		return true;
+	}
+
+6* Replace the function with:
+	if (!peer)
+	{
+#ifdef __ENABLE_NEW_OFFLINESHOP__
+		switch (qi->iType)
+		{
+			case QID_OFFLINESHOP_ADD_ITEM:
+			case QID_OFFLINESHOP_EDIT_ITEM:
+			case QID_OFFLINESHOP_DELETE_SHOP:
+			case QID_OFFLINESHOP_DELETE_SHOP_ITEM:
+			case QID_OFFLINESHOP_REMOVE_ITEM:
+			case QID_OFFLINESHOP_UPDATE_SOLD_ITEM:
+			case QID_OFFLINESHOP_CREATE_SHOP:
+			case QID_OFFLINESHOP_CREATE_SHOP_ADD_ITEM:
+			case QID_OFFLINESHOP_SHOP_CHANGE_NAME:
+			case QID_OFFLINESHOP_SHOP_UPDATE_DURATION:
+			case QID_OFFLINESHOP_SAFEBOX_DELETE_ITEM:
+			case QID_OFFLINESHOP_SAFEBOX_ADD_ITEM:
+			case QID_OFFLINESHOP_SAFEBOX_UPDATE_VALUTES:
+			case QID_OFFLINESHOP_SAFEBOX_INSERT_VALUTES:
+			case QID_OFFLINESHOP_SAFEBOX_UPDATE_VALUTES_ADDING:
+			case QID_OFFLINESHOP_OFFER_ADD:
+			case QID_OFFLINESHOP_OFFER_UPDATE_NOTIFIED:
+			case QID_OFFLINESHOP_OFFER_UPDATE_ACCEPTED:
+			case QID_OFFLINESHOP_OFFER_DELETE_BY_SHOP:
+			case QID_OFFLINESHOP_AUCTION_INSERT:
+			case QID_OFFLINESHOP_AUCTION_INSERT_OFFER:
+			case QID_OFFLINESHOP_AUCTION_DELETE:
+			case QID_OFFLINESHOP_AUCTION_DELETE_OFFERS:
+			case QID_OFFLINESHOP_AUCTION_UPDATE_DURATION:
+				OfflineShopResultQuery(peer, msg, qi);
+				break;
+			default: break;
+		}
+#endif
+		delete qi;
+		return true;
+	}
+
+7* Search for:
+		case QID_ITEMPRICE_LOAD:
+			RESULT_PRICELIST_LOAD(peer, msg);
+			break;
+
+8* Add below:
+#ifdef __ENABLE_NEW_OFFLINESHOP__
+		case QID_OFFLINESHOP_ADD_ITEM:
+		case QID_OFFLINESHOP_EDIT_ITEM:
+		case QID_OFFLINESHOP_DELETE_SHOP:
+		case QID_OFFLINESHOP_DELETE_SHOP_ITEM:
+		case QID_OFFLINESHOP_CREATE_SHOP:
+		case QID_OFFLINESHOP_CREATE_SHOP_ADD_ITEM:
+		case QID_OFFLINESHOP_SHOP_CHANGE_NAME:
+		case QID_OFFLINESHOP_SAFEBOX_DELETE_ITEM:
+		case QID_OFFLINESHOP_SAFEBOX_ADD_ITEM:
+		case QID_OFFLINESHOP_REMOVE_ITEM:
+		case QID_OFFLINESHOP_SAFEBOX_UPDATE_VALUTES:
+		case QID_OFFLINESHOP_SAFEBOX_INSERT_VALUTES:
+		case QID_OFFLINESHOP_SAFEBOX_UPDATE_VALUTES_ADDING:
+		case QID_OFFLINESHOP_OFFER_ADD:
+		case QID_OFFLINESHOP_OFFER_UPDATE_NOTIFIED:
+		case QID_OFFLINESHOP_OFFER_UPDATE_ACCEPTED:
+		case QID_OFFLINESHOP_OFFER_DELETE_BY_SHOP:
+		case QID_OFFLINESHOP_AUCTION_INSERT:
+		case QID_OFFLINESHOP_AUCTION_INSERT_OFFER:
+		case QID_OFFLINESHOP_AUCTION_DELETE:
+		case QID_OFFLINESHOP_AUCTION_DELETE_OFFERS:
+		case QID_OFFLINESHOP_AUCTION_UPDATE_DURATION:
+			OfflineShopResultQuery(peer, msg, qi);
+			break;
+#endif
+
+9* Search for:
+			g_item_count = 0;
+		}
+
+10* Add below:
+#ifdef __ENABLE_NEW_OFFLINESHOP__
+		if ((thecore_heart->pulse % (thecore_heart->passes_per_sec * 60)) == thecore_heart->passes_per_sec*30)
+		{
+			OfflineshopDurationProcess();
+		}
+#endif
